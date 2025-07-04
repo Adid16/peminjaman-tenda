@@ -1191,3 +1191,240 @@ a:hover {
     font-size: 1em;
   }
 }
+
+/* --- Styling for Detail Tenda (detail-tenda.html) --- */
+
+.tent-detail-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 40px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  align-items: flex-start; /* Align items to the top */
+}
+
+.tent-image {
+  flex: 1; /* Allow image to grow/shrink */
+  min-width: 300px; /* Minimum width for the image container */
+  max-width: 550px; /* Max width to prevent image from being too large */
+  margin: 0 auto; /* Center image if it's the only one on its row */
+  overflow: hidden; /* Ensure image doesn't overflow its container */
+  border-radius: 8px; /* Match other elements */
+}
+
+.tent-image img {
+  width: 100%;
+  height: auto;
+  display: block; /* Remove extra space below image */
+  border-radius: 8px;
+}
+
+.tent-info {
+  flex: 1.5; /* Allow info section to take more space */
+  min-width: 350px; /* Minimum width for the info section */
+  line-height: 1.6;
+  color: #333;
+}
+
+.tent-info h2 {
+  font-size: 2.2em;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.tent-info .tent-price {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.tent-info .tent-capacity,
+.tent-info .tent-type {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.tent-info .tent-capacity i,
+.tent-info .tent-type i {
+  color: #007bff;
+  margin-right: 8px;
+  font-size: 1.2em;
+}
+
+.tent-info h3 {
+  font-size: 1.6em;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.tent-info p {
+  font-size: 1em;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.tent-info ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.tent-info ul li {
+  margin-bottom: 8px;
+  color: #444;
+  font-size: 0.98em;
+  display: flex;
+  align-items: flex-start;
+}
+
+.tent-info ul li i.fa-check-circle {
+  /* For features list */
+  color: #28a745; /* Green for checkmarks */
+  margin-right: 10px;
+  flex-shrink: 0; /* Prevent icon from shrinking */
+  margin-top: 3px; /* Adjust vertical alignment */
+}
+
+.tent-info ul#tentAccessories li {
+  /* For accessories list */
+  color: #444;
+  margin-bottom: 5px;
+  padding-left: 15px; /* Indent slightly for list appearance */
+  position: relative;
+}
+
+.tent-info ul#tentAccessories li::before {
+  content: "\2022"; /* Bullet point character */
+  color: #007bff; /* Blue bullet */
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.action-buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  justify-content: flex-start; /* Align buttons to start */
+}
+
+.action-buttons .btn {
+  padding: 12px 25px;
+  font-size: 1.05em;
+  border-radius: 6px;
+  text-align: center;
+  min-width: 160px; /* Ensure buttons have a minimum readable width */
+}
+
+.action-buttons .btn-secondary {
+  background-color: #6c757d;
+}
+
+.action-buttons .btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Related Tents Section */
+.related-tents {
+  margin-top: 60px;
+}
+
+.related-tents .section-title {
+  text-align: center;
+  font-size: 2.2em;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.related-tents .tent-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 30px;
+  justify-content: center; /* Center items in grid */
+}
+
+/* Responsive adjustments for detail-tenda.html */
+@media (max-width: 992px) {
+  .tent-detail-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    gap: 30px;
+  }
+  .tent-image,
+  .tent-info {
+    width: 100%;
+    max-width: 600px; /* Constrain max width for better readability */
+    min-width: unset; /* Allow shrinking */
+  }
+  .tent-image {
+    margin: 0 auto;
+  }
+  .tent-info {
+    text-align: center; /* Center align info text */
+  }
+  .tent-info h2,
+  .tent-info h3 {
+    text-align: center;
+  }
+  .tent-info ul {
+    display: inline-block; /* Center list */
+    text-align: left; /* Keep list items left-aligned */
+  }
+  .action-buttons {
+    justify-content: center; /* Center buttons */
+  }
+  .related-tents .tent-cards {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .tent-detail-section {
+    padding: 20px 15px;
+  }
+  .tent-info h2 {
+    font-size: 1.8em;
+  }
+  .tent-info .tent-price {
+    font-size: 1.3em;
+  }
+  .tent-info .tent-capacity,
+  .tent-info .tent-type {
+    font-size: 1em;
+  }
+  .tent-info h3 {
+    font-size: 1.4em;
+  }
+  .tent-info p,
+  .tent-info ul li {
+    font-size: 0.95em;
+  }
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .action-buttons .btn {
+    width: 100%;
+    min-width: unset;
+    padding: 12px 20px;
+    font-size: 1em;
+  }
+  .related-tents .section-title {
+    font-size: 1.8em;
+  }
+  .related-tents .tent-cards {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+  }
+}
